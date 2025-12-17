@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+:root {
+    --font-playpen: "Playpen Sans", sans-serif;
+    --color-white: #FFFFFF;
+    --color-title: #7E0048;
+}
+
+@font-face {
+    font-family: "Playpen Sans";
+    src: url(/font/PlaypenSans-VariableFont_wght.woff2);
+}
+
+.font-playpen-header {
+    color: var(--color-white);
+    font-family: var(--font-playpen), sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+
+}
+
+.font-playpen-fio {
+    color: var(--color-white);
+    font-family: var(--font-playpen), sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+
+}
+
+.font-playpen-portfolio {
+    color: var(--color-title);
+    font-family: var(--font-playpen), sans-serif;
+    font-size: 120px;
+    font-weight: 600;
+    letter-spacing: 10px;
+
+}
+
+.font-playpen-btn {
+    color: var(--color-white);
+    font-family: var(--font-playpen), sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+
+}
+
+.font-playpen-about {
+    color: var(--color-title);
+    font-family: var(--font-playpen), sans-serif;
+    font-size: 40px;
+    font-weight: 600;
+}
+
+.font-playpen-networks {
+    color: var(--color-title);
+    font-family: var(--font-playpen), sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.font-playpen-paragraph {
+    color: var(--color-title);
+    font-family: var(--font-playpen), sans-serif;
+    font-size: 24px;
+
+
+}
+
+.font-playpen-skill {
+    color: var(--color-title);
+    font-family: var(--font-playpen), sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+
+}
+
+.font-playpen-skill2 {
+    color: var(--color-title);
+    font-family: var(--font-playpen), sans-serif;
+    font-size: 24px;
+    font-weight: regular;
+}
+
+.font-playpen-project {
+    color: var(--color-title);
+    font-family: var(--font-playpen), sans-serif;
+    font-size: 32px;
+    font-weight: 600;
+
+}
+
+.font-playpen-footer {
+    color: var(--color-white);
+    font-family: var(--font-playpen), sans-serif;
+    font-size: 24px;
+    font-weight: regular;
+
+}
+
+.slide {
+  @apply w-full shrink-0 flex justify-center;
+}
+
+.slide img {
+  @apply w-[80%] h-[80%] rounded-xl;
+}
