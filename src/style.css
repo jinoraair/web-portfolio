@@ -97,10 +97,23 @@
 
 }
 
-.slide {
-  @apply w-full shrink-0 flex justify-center;
+.swiper {
+  width: 100%;
 }
 
-.slide img {
-  @apply w-[80%] h-[80%] rounded-xl;
+.swiper-slide {
+  display: flex;
+  justify-content: center;
 }
+
+.swiper-slide img {
+  width: 80%;
+  border-radius: 16px;
+}
+
+.swiper-button-prev, .swiper-button-next {
+    color: #be016c;
+}
+
+
+

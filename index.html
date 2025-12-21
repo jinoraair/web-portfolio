@@ -9,6 +9,8 @@
     <title>Portfolio</title>
 
     <link rel="stylesheet" href="/style/main.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
   </head>
   <body class="bg-linear-to-b from-pink-600 from-0% via-pink-300 to-pink-300">
 
@@ -43,9 +45,9 @@
                 <a href="https://vk.com/kyu_raff" target="_blank">@Kyu_Raff</a>
                 <a href="https://wa.me/+79142570388" target="_blank">+7 914 257-03-88</a>
             </div>
-            <h1 class="font-playpen-about absolute left-130 top-5">Обо мне</h1>
+            <h2 class="font-playpen-about absolute left-130 top-5">Обо мне</h2>
             <p class="font-playpen-paragraph absolute text-justify left-130 top-20">Я стараюсь пробовать себя в разном. На данный момент учусь делать дизайны сайтов, интересуюсь фронтендом.  Помимо этого я изучаю программирование на C#, чтобы научиться разрабатывать приложения.</p>
-            <h1 class="font-playpen-about absolute left-130 top-57">Технические навыки</h1>
+            <h2 class="font-playpen-about absolute left-130 top-57">Технические навыки</h2>
             <img src="/image/figma.svg" class="absolute left-130 top-75">
             <img src="/image/figma-progress.svg" class="absolute left-150 top-78">
             <img src="/image/photoshop.svg" class="absolute left-130 top-90">
@@ -77,7 +79,7 @@
 
         <!-- Projects -->
         <section class="relative mt-50" id="projects">
-            <h1 class="font-playpen-project text-center mb-15">Проекты</h1>
+            <h2 class="font-playpen-project text-center mb-15">Проекты</h2>
             <div class="flex mx-auto justify-between items-center mb-50">
                 <a href = "https://www.figma.com/design/QADawlxROoJuMWDoHZ6urZ/Untitled?node-id=0-1&t=TV3UhQZnawnYt99D-1" target="_blank">
                     <div class="relative group w-64">
@@ -192,59 +194,38 @@
 
             </div>
         </section>
+        
+        
 
-        <section id="project" class="relative mt-30 overflow-hidden">
-            <h1 class="font-playpen-project text-center mb-15">NVP</h1>
-            <h2 class="font-playpen-skill text-center mb-10">Большеохтинский мост</h2>
+            
 
-            <!-- Кнопка влево -->
-            <button
-                id="prev"
-                class="absolute left-4 top-1/2 -translate-y-1/2 z-10
-                    bg-pink-400/60 text-white px-4 py-2 rounded-full"
-                aria-label="Предыдущий слайд"
-            >
-                ❮
-            </button>
+        <section id="project" class="relative mt-30 mb-30">
+            <h2 class="font-playpen-project text-center mb-10">NVP</h2>
+            <h3 class="font-playpen-skill text-center mb-10">Большеохтинский мост</h3>
 
-            <!-- Слайдер -->
-            <div class="overflow-hidden w-full">
-                <div
-                id="slider"
-                class="flex transition-transform duration-500 ease-in-out"
-                >
-                <!-- Слайд -->
-                <div class="slide">
-                    <img src="/image/nvp1.png" alt="" />
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="/image/nvp1.png" />
                 </div>
-
-                <div class="slide">
-                    <img src="/image/nvp2.png" alt="" />
+                <div class="swiper-slide">
+                    <img src="/image/nvp2.png" />
                 </div>
-
-                <div class="slide">
-                    <img src="/image/nvp3.png" alt="" />
+                <div class="swiper-slide">
+                    <img src="/image/nvp3.png" />
                 </div>
-
-                <div class="slide">
-                    <img src="/image/nvp4.png" alt="" />
+                <div class="swiper-slide">
+                    <img src="/image/nvp4.png" />
                 </div>
                 </div>
+
+                <!-- кнопки -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
             </div>
-
-            <!-- Кнопка вправо -->
-            <button
-                id="next"
-                class="absolute right-4 top-1/2 -translate-y-1/2 z-10
-                    bg-pink-400/60 text-white px-4 py-2 rounded-full"
-                aria-label="Следующий слайд"
-            >
-                ❯
-            </button>
-            <p class="font-playpen-paragraph absolute top-175 text-center mb-15">
-                3d-модель Большеохтинского моста, сделанная с помощью нодов в программе для строительства NVP.
-            </p>
+            <p class="font-playpen-paragraph absolute top-210 text-center mb-15">3d-модель Большеохтинского моста, сделанная с помощью нодов в программе для строительства NVP.</p>
         </section>
+
 
     </div>
 
@@ -255,32 +236,24 @@
     </footer>
 
     <script type="module" src="/src/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 
-     <script>
-        const slider = document.getElementById('slider');
-        const slides = slider.children;
-        const prev = document.getElementById('prev');
-        const next = document.getElementById('next');
 
-        let index = 0;
+    <script>
+        new Swiper('.swiper', {
+        loop: true,
+        speed: 500,
 
-        function updateSlider() {
-        const width = slider.parentElement.offsetWidth;
-        slider.style.transform = `translateX(-${index * width}px)`;
-        }
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
 
-        next.addEventListener('click', () => {
-        index = (index + 1) % slides.length;
-        updateSlider();
+        slidesPerView: 1,
+        spaceBetween: 0,
         });
-
-        prev.addEventListener('click', () => {
-        index = (index - 1 + slides.length) % slides.length;
-        updateSlider();
-        });
-
-        window.addEventListener('resize', updateSlider);
     </script>
+
   </body>
 </html>
